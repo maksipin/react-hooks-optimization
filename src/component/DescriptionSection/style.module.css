@@ -1,0 +1,38 @@
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--backgroundColor);
+}
+
+.wrapper {
+    color: var(--lightTextColor);
+    width: var(--widthContainer);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+    line-height: 1.2;
+    font-family: "Gloock", sans-serif;
+    letter-spacing: 1.1px;
+    white-space: pre-wrap;
+}
+
+.title {
+    width: 70%;
+    font-size: 50px;
+    font-weight: 600;
+    padding-bottom: 16px;
+}
+
+.secondary {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 0.8;
+}
