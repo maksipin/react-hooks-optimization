@@ -1,10 +1,16 @@
 import React from "react";
 import classes from "./style.module.css";
+import { motion } from "framer-motion";
 
 const ContentSection = ({ img, title, secondary, invert }) => {
   return (
-    <div className={classes.container}>
-      <div className={classes.wrapper}>
+    <motion.div className={classes.container}>
+      <motion.div
+        className={classes.wrapper}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { duration: 2.0 } }}
+        viewport={{ amount: "some" }}
+      >
         {invert && (
           <div>
             <img src={img} alt={title} width={"600px"} />
@@ -19,8 +25,8 @@ const ContentSection = ({ img, title, secondary, invert }) => {
             <img src={img} alt={title} width={"600px"} />
           </div>
         )}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
