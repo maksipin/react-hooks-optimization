@@ -12,14 +12,20 @@
     color: var(--darkTextColor);
     width: var(--widthContainer);
     height: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 10px;
+    /*display: grid;*/
+    /*grid-template-columns: auto 1fr;*/
+    /*gap: 10px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     line-height: 1;
     font-family: "Gloock", sans-serif;
 }
 
 .titleWrapper {
+    /*flex: 0 0 30em;*/
+    /*width: 50%;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,6 +39,7 @@
 }
 
 .secondary {
+    white-space: pre-wrap;
     font-family: "Inter", sans-serif;
     font-size: 18px;
     font-weight: 300;
@@ -41,6 +48,11 @@
 }
 
 .image {
-    width: 600px;
+    /*max-height: 250px*/
+}
+
+img {
+    /*padding: 15px;*/
+    /*max-height: 350px*/
 
 }

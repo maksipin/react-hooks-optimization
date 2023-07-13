@@ -11,35 +11,15 @@ const CommonPage = ({ config }) => {
     <>
       {config.map((section, i) => {
         if (section.type === "title") {
-          const { title, secondary, icon, linkButton } = section;
-          return (
-            <TitleSection
-              key={i}
-              title={title}
-              secondary={secondary}
-              icon={icon}
-              linkButton={linkButton}
-            />
-          );
+          return <TitleSection key={i} {...section} />;
         }
         if (section.type === "describe") {
-          const { title, secondary } = section;
-          return (
-            <DescriptionSection key={i} title={title} secondary={secondary} />
-          );
+          return <DescriptionSection key={i} {...section} />;
         }
+
         if (section.type === "content") {
-          const { title, secondary, img } = section;
           const invert = i % 2 !== 0;
-          return (
-            <ContentSection
-              key={i}
-              invert={invert}
-              img={img}
-              title={title}
-              secondary={secondary}
-            />
-          );
+          return <ContentSection key={i} invert={invert} {...section} />;
         }
       })}
     </>

@@ -3,7 +3,7 @@ import classes from "./style.module.css";
 import { Link } from "react-router-dom";
 import { motion, useIsPresent } from "framer-motion";
 
-const TitleSection = ({ icon, title, secondary, linkButton }) => {
+const TitleSection = ({ icon, title, secondary, buttonLink, buttonName }) => {
   const isPresent = useIsPresent();
   const visible = { opacity: 1, y: 0, transition: { duration: 0.5 } };
   return (
@@ -19,8 +19,11 @@ const TitleSection = ({ icon, title, secondary, linkButton }) => {
         <div className={classes.icon}>{icon}</div>
         <div className={classes.title}>{title}</div>
         <div className={classes.secondary}>{secondary}</div>
-        <Link to={linkButton} target="_blank">
-          <div className={classes.button}>Документация</div>
+        <Link
+          to={buttonLink}
+          target={buttonLink.includes("http") ? "_blank" : ""}
+        >
+          <div className={classes.button}>{buttonName}</div>
         </Link>
       </motion.div>
       <motion.div

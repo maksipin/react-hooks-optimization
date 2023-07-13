@@ -11,18 +11,20 @@ const ContentSection = ({ img, title, secondary, invert }) => {
         whileInView={{ opacity: 1, transition: { duration: 2.0 } }}
         viewport={{ amount: "some" }}
       >
-        {invert && (
-          <div>
-            <img src={img} alt={title} width={"600px"} />
+        {img && invert && (
+          <div className={classes.image}>
+            <img src={img} alt={title} />
           </div>
         )}
-        <div className={classes.titleWrapper}>
-          <div className={classes.title}>{title}</div>
-          <div className={classes.secondary}>{secondary}</div>
-        </div>
-        {!invert && (
-          <div>
-            <img src={img} alt={title} width={"600px"} />
+        {(title || secondary) && (
+          <div className={classes.titleWrapper}>
+            {title && <div className={classes.title}>{title}</div>}
+            {secondary && <div className={classes.secondary}>{secondary}</div>}
+          </div>
+        )}
+        {img && !invert && (
+          <div className={classes.image}>
+            <img src={img} alt={title} />
           </div>
         )}
       </motion.div>
