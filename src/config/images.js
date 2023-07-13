@@ -6,8 +6,12 @@ import primitive from "../public/assets/render/primitive.png";
 import objectImg from "../public/assets/render/object.png";
 import objectCompare1 from "../public/assets/render/objCompare1.png";
 import objectCompare2 from "../public/assets/render/objCompare2.png";
+import initial from "../public/assets/useRef/initial.png";
+import interval1 from "../public/assets/useRef/interval1.png";
+import interval2 from "../public/assets/useRef/interval2.png";
+import interval3 from "../public/assets/useRef/interval3.png";
 
-export const images = {
+export const mainPageImage = {
   render,
   render1,
   render2,
@@ -17,3 +21,5 @@ export const images = {
   objectCompare2,
   primitive,
 };
+
+export const useRefImage = { initial, interval1, interval2, interval3 };

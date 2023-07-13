@@ -3,7 +3,7 @@ import { DiReact } from "react-icons/di";
 import { FcIdea } from "react-icons/fc";
 import { GiBrain } from "react-icons/gi";
 import { RiShakeHandsFill } from "react-icons/ri";
-import { images } from "./images";
+import { mainPageImage, useRefImage } from "./images";
 
 export const configPages = {
   main: {
@@ -28,25 +28,25 @@ export const configPages = {
       },
       {
         type: "content",
-        img: images.render1,
+        img: mainPageImage.render1,
         title: "Монтирование компонента",
         secondary:
           "При первом монтирование компонента происходит рендер (отрисовка страницы). В компонент мы можем передавать props и использовать state",
       },
       {
         type: "content",
-        img: images.updateRender,
+        img: mainPageImage.updateRender,
       },
       {
         type: "content",
-        img: images.render2,
+        img: mainPageImage.render2,
         title: "Повторный рендер (ререндер)",
         secondary:
           "В тот момент когда поменялся props или изменилось состояние происходит повторный рендер(ререндр) компонента. Чем чаще мы вызываем рендер, тем больше создается нагрузка на устройство и как следствие падение производительности.",
       },
       {
         type: "content",
-        img: images.render,
+        img: mainPageImage.render,
       },
       {
         type: "describe",
@@ -56,7 +56,7 @@ export const configPages = {
       },
       {
         type: "content",
-        img: images.primitive,
+        img: mainPageImage.primitive,
         title: "В JavaScript выделяют 7 примитивных типов:",
         secondary:
           "number (обычные числа);\n" +
@@ -75,14 +75,14 @@ export const configPages = {
       },
       {
         type: "content",
-        img: images.objectImg,
+        img: mainPageImage.objectImg,
         title: "Ссылочный тип в JavaScript только один – это object (объект).",
         secondary:
           "Объект – это одно из ключевых понятий JavaScript. Т.к. в этом языке всё практически является объектами. Функция, массив, дата и т.д. – это объекты. Даже примитивные типы данных ведут себя как объекты, хотя ими не являются.",
       },
       {
         type: "content",
-        img: images.objectCompare1,
+        img: mainPageImage.objectCompare1,
         title: "Сравнение по ссылке.",
         secondary:
           "Два объекта равны только в том случае, если это один и тот же объект.\n" +
@@ -91,7 +91,7 @@ export const configPages = {
       },
       {
         type: "content",
-        img: images.objectCompare2,
+        img: mainPageImage.objectCompare2,
         title: "Сравнение независимых объектов",
         secondary:
           "И здесь два независимых объекта не равны, даже если они выглядят одинаково (оба пусты):",
@@ -122,7 +122,7 @@ export const configPages = {
         icon: <RiShakeHandsFill />,
         title: "useRef hook",
         secondary:
-          "Позволяет ссылаться на значение и изменять его, не вызывая повторного рендера",
+          "Позволяет ссылаться на значение, изменять его не вызывая повторного рендера",
         buttonName: "Документация",
         buttonLink: "https://react.dev/reference/react/useRef",
       },
@@ -130,13 +130,36 @@ export const configPages = {
       {
         type: "describe",
         title: "И так, чем же может быть полезен данный хук?",
-        secondary: "",
+        secondary: "Для начала давайте посмотрим как его инициализировать.",
       },
       {
         type: "content",
-        img: "",
-        title: "",
-        secondary: "",
+        img: useRefImage.initial,
+        title: "Инициация useRef",
+        secondary:
+          "Вызываем хук useRef на верхнем уровне компонента. В скобки можем передать initialValue(значение которые будет в поле current изначально)\n" +
+          "useRef возвращает ref-объект со свойством current. Можно менять это свойство.\n" +
+          "Если передать ref-объект в качестве атрибута ref узлу JSX, то React установит его current свойство, что позволит обращаться к DOM напрямую.\n" +
+          "" +
+          "При следующем рендеринге useRef вернет тотже объект.",
+      },
+      {
+        type: "content",
+        title: "Пример.",
+        secondary:
+          "Сохраняем индентификатор интервала в поле intervalRef.current",
+      },
+      {
+        type: "content",
+        img: useRefImage.interval1,
+      },
+      {
+        type: "content",
+        img: useRefImage.interval2,
+      },
+      {
+        type: "content",
+        img: useRefImage.interval3,
       },
     ],
   },
