@@ -1,9 +1,9 @@
 import { DiAtom } from "react-icons/di";
 import { DiReact } from "react-icons/di";
 import { FcIdea } from "react-icons/fc";
-import { GiBrain } from "react-icons/gi";
+import { GiBoxTrap, GiBrain } from "react-icons/gi";
 import { RiShakeHandsFill } from "react-icons/ri";
-import { mainPageImage, useRefImage } from "./images";
+import { mainPageImage, useRefImage, useMemoImage } from "./images";
 
 export const configPages = {
   main: {
@@ -100,7 +100,8 @@ export const configPages = {
         type: "describe",
         title: "И вот теперь мы подошли к главному моменту!",
         secondary:
-          "При каждом ренере в теле компонента будут формироваться новые объекты, массивы, функции и если мы их передаем в дочерний компонент как props, то это будет вызывать повторный рендер компонента, даже если значения в объекте не менялись.",
+          "При каждом ре-рендере родительского компонента будет происходить ре-рендер дочерненего компонента.\n" +
+          "При каждом рендере в теле компонента будут формироваться новые объекты, массивы, функции и если мы их передаем в дочерний компонент как props, то это будет вызывать повторный рендер компонента, даже если значения в внутри объекта не менялись.",
       },
       {
         type: "title",
@@ -135,7 +136,7 @@ export const configPages = {
       {
         type: "content",
         img: useRefImage.initial,
-        title: "Инициация useRef",
+        title: "Вызываем хук useRef...",
         secondary:
           "Вызываем хук useRef на верхнем уровне компонента. В скобки можем передать initialValue(значение которые будет в поле current изначально)\n" +
           "useRef возвращает ref-объект со свойством current. Можно менять это свойство.\n" +
@@ -147,7 +148,9 @@ export const configPages = {
         type: "content",
         title: "Пример.",
         secondary:
-          "Сохраняем индентификатор интервала в поле intervalRef.current",
+          "1. Вызываем хук useRef, сохраняем ref-объект в переменную intervalRef.\n" +
+          "2. Сохраняем ввнутри функции индентификатор интервала в поле intervalRef.current.\n" +
+          "3. Очищаем интервал в другой функции",
       },
       {
         type: "content",
@@ -161,6 +164,11 @@ export const configPages = {
         type: "content",
         img: useRefImage.interval3,
       },
+      {
+        type: "title",
+        buttonName: "Больше примеров здесь",
+        buttonLink: "https://react.dev/reference/react/useRef#examples-dom",
+      },
     ],
   },
   useMemo: {
@@ -169,23 +177,29 @@ export const configPages = {
     content: [
       {
         type: "title",
-        icon: "",
-        title: "",
-        secondary: "",
+        icon: <GiBrain />,
+        title: "useMemo hook",
+        secondary:
+          "Позволяет кэшировать результат вычислений между повторными рендерами.",
         buttonName: "Документация",
-        buttonLink: "https://react.dev/reference/react/useRef",
+        buttonLink: "https://react.dev/reference/react/useMemo",
       },
 
       {
         type: "describe",
-        title: "",
-        secondary: "",
+        title: "Один из самых используемых хуков",
+        secondary:
+          "С этим хуком вы подружитесь ))).\n" +
+          "Давайте разбираться как им пользоваться",
       },
       {
         type: "content",
-        img: "",
-        title: "",
-        secondary: "",
+        img: useMemoImage.initialUseMemo,
+        title: "Вызываем хук useMemo...",
+        secondary:
+          "Вызываем хук useMemo на верхнем уровне компонента.\n" +
+          "Первым параметром передаем колбэк функцию результат которой необходимо кешировать.\n" +
+          "Вторым параметром передаем массив зависимостей при изменении, которой будет произведен повторный вызов переданной функции.",
       },
     ],
   },

@@ -1,8 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
 import { configPages } from "../config/configPages";
-
 import Navbar from "../component/NavBar/Navbar";
 import CommonPage from "../pages/CommonPage/CommonPage";
+import React from "react";
 
 const pages = Object.keys(configPages).map((page) => {
   const config = configPages[page].content;
@@ -16,7 +15,7 @@ pages.push({
   element: <CommonPage config={[...configPages.main.content]} />,
 });
 
-export const route = createBrowserRouter([
+export const route = [
   {
     path: "/",
     element: <Navbar />,
@@ -24,6 +23,11 @@ export const route = createBrowserRouter([
   },
   {
     path: "*",
-    element: <Navbar />,
+    element: (
+      <>
+        <Navbar />
+        <CommonPage config={[...configPages.main.content]} />
+      </>
+    ),
   },
-]);
+];

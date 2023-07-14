@@ -16,9 +16,9 @@ const TitleSection = ({ icon, title, secondary, buttonLink, buttonName }) => {
         exit={{ opacity: 0, transition: { duration: 1.5 } }}
         variants={{ visible: { transition: { staggerChildren: 0.9 } } }}
       >
-        <div className={classes.icon}>{icon}</div>
-        <div className={classes.title}>{title}</div>
-        <div className={classes.secondary}>{secondary}</div>
+        {icon && <div className={classes.icon}>{icon}</div>}
+        {title && <div className={classes.title}>{title}</div>}
+        {secondary && <div className={classes.secondary}>{secondary}</div>}
         <Link
           to={buttonLink}
           target={buttonLink.includes("http") ? "_blank" : ""}
