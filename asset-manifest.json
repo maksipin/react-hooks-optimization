@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/maksipin/react-hooks-optimization/static/css/main.af587337.css",
+    "main.js": "/maksipin/react-hooks-optimization/static/js/main.7755c483.js",
+    "static/media/render.png": "/maksipin/react-hooks-optimization/static/media/render.9e8d3436d56501efe0d2.png",
+    "static/media/update_render.png": "/maksipin/react-hooks-optimization/static/media/update_render.bea4972db30e527879a1.png",
+    "static/media/object.png": "/maksipin/react-hooks-optimization/static/media/object.1fe87620c7a6148e4011.png",
+    "static/media/57.png": "/maksipin/react-hooks-optimization/static/media/57.bce54894cc28911bd4f0.png",
+    "static/media/interval2.png": "/maksipin/react-hooks-optimization/static/media/interval2.649b367036708d91aa2c.png",
+    "static/media/primitive.png": "/maksipin/react-hooks-optimization/static/media/primitive.d09da2af8222bf6c85ec.png",
+    "static/media/interval3.png": "/maksipin/react-hooks-optimization/static/media/interval3.367b107714a7bf2333a6.png",
+    "static/media/interval1.png": "/maksipin/react-hooks-optimization/static/media/interval1.3570d991f8e2464770ac.png",
+    "static/media/475.png": "/maksipin/react-hooks-optimization/static/media/475.49f5f201efb2e7c62c38.png",
+    "static/media/initial.png": "/maksipin/react-hooks-optimization/static/media/initial.cdbaf2ae155eab34b7f1.png",
+    "index.html": "/maksipin/react-hooks-optimization/index.html",
+    "main.af587337.css.map": "/maksipin/react-hooks-optimization/static/css/main.af587337.css.map",
+    "main.7755c483.js.map": "/maksipin/react-hooks-optimization/static/js/main.7755c483.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af587337.css",
+    "static/js/main.7755c483.js"
+  ]
+}
