@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-hooks-optimization/static/css/main.af587337.css",
-    "main.js": "/react-hooks-optimization/static/js/main.ae003c34.js",
+    "main.js": "/react-hooks-optimization/static/js/main.6ffd5e9d.js",
     "static/media/render.png": "/react-hooks-optimization/static/media/render.9e8d3436d56501efe0d2.png",
     "static/media/update_render.png": "/react-hooks-optimization/static/media/update_render.bea4972db30e527879a1.png",
     "static/media/object.png": "/react-hooks-optimization/static/media/object.1fe87620c7a6148e4011.png",
@@ -14,10 +14,10 @@
     "static/media/initial.png": "/react-hooks-optimization/static/media/initial.cdbaf2ae155eab34b7f1.png",
     "index.html": "/react-hooks-optimization/index.html",
     "main.af587337.css.map": "/react-hooks-optimization/static/css/main.af587337.css.map",
-    "main.ae003c34.js.map": "/react-hooks-optimization/static/js/main.ae003c34.js.map"
+    "main.6ffd5e9d.js.map": "/react-hooks-optimization/static/js/main.6ffd5e9d.js.map"
   },
   "entrypoints": [
     "static/css/main.af587337.css",
-    "static/js/main.ae003c34.js"
+    "static/js/main.6ffd5e9d.js"
   ]
 }
