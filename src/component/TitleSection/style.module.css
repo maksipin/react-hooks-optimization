@@ -58,3 +58,7 @@ svg {
     background-color: var(--mainTextColor);
     z-index: 2;
 }
+
+svg {
+    color: var(--mainTextColor);;
+}

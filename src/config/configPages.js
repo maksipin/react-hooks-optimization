@@ -1,9 +1,18 @@
-import { DiAtom } from "react-icons/di";
+import { MdUpdate } from "react-icons/md";
 import { DiReact } from "react-icons/di";
 import { FcIdea } from "react-icons/fc";
-import { GiBoxTrap, GiBrain } from "react-icons/gi";
+import { AiOutlineLike } from "react-icons/ai";
+import { GiStrongMan, GiBrain, GiBugleCall } from "react-icons/gi";
 import { RiShakeHandsFill } from "react-icons/ri";
-import { mainPageImage, useRefImage, useMemoImage } from "./images";
+import { TbMessageCircleQuestion } from "react-icons/tb";
+import {
+  mainPageImage,
+  useRefImage,
+  useMemoImage,
+  useCallbackImage,
+  memoImage,
+  aboutImage,
+} from "./images";
 
 export const configPages = {
   main: {
@@ -22,7 +31,7 @@ export const configPages = {
       {
         type: "describe",
         title:
-          "Давайте вместе прокачайем ваши навыки оптимизации React с помощью хуков и других инструментов!",
+          "Давайте вместе прокачаем ваши навыки оптимизации React с помощью хуков и других инструментов!",
         secondary:
           "Для начала давайте вспомним общую информацию и поговорим о рендере(render).\nМы пока не будем рассматривать случаи с использованием useSelector, useContext и т.п. ",
       },
@@ -42,17 +51,31 @@ export const configPages = {
         img: mainPageImage.render2,
         title: "Повторный рендер (ререндер)",
         secondary:
-          "В тот момент когда поменялся props или изменилось состояние происходит повторный рендер(ререндр) компонента. Чем чаще мы вызываем рендер, тем больше создается нагрузка на устройство и как следствие падение производительности.",
+          "В тот момент когда поменялся props или изменился state происходит повторный рендер(ре-рендр) компонента. Чем чаще мы вызываем рендер, тем больше создается нагрузка на устройство и как следствие падение производительности.",
       },
+
       {
         type: "content",
         img: mainPageImage.render,
       },
       {
+        type: "content",
+        title: "Еще пример в картинках",
+        secondary: "Не удержался не добавить их сюда....",
+      },
+      {
+        type: "content",
+        img: mainPageImage.render4,
+      },
+      {
+        type: "content",
+        img: mainPageImage.render3,
+      },
+      {
         type: "describe",
         title: "А теперь давайте вспомним какие типы данных мы знаем \nв JS",
         secondary:
-          "В JavaScript выделяют два вида типов данных - примитивные типы и ссылочные.",
+          "В JavaScript выделяют два вида типов данных - примитивные типы и не примитивные (ссылочные).",
       },
       {
         type: "content",
@@ -184,7 +207,6 @@ export const configPages = {
         buttonName: "Документация",
         buttonLink: "https://react.dev/reference/react/useMemo",
       },
-
       {
         type: "describe",
         title: "Один из самых используемых хуков",
@@ -201,6 +223,33 @@ export const configPages = {
           "Первым параметром передаем колбэк функцию результат которой необходимо кешировать.\n" +
           "Вторым параметром передаем массив зависимостей при изменении, которой будет произведен повторный вызов переданной функции.",
       },
+      {
+        type: "content",
+        title: "Давайте разбираться когда нам пригодится useMemo...",
+        secondary:
+          "По умолчанию React будет повторно запускать все тело компонента при каждом повторном рендере. Т.е. без useMemo функция filterTodos() будет вызываться при каждом редере.\n" +
+          "И в большинстве случаев это не проблема, но что если вы сортируете массив с 1000 и более элементов? Здесь и поможет нам useMemo(), он при первом рендере выполнит сортировку, закэширует результат и при каждом новом рендере будет его нам отдавать, пока не изменится хотя бы одна переменная в массиве зависимостей.",
+      },
+      {
+        type: "title",
+        buttonName: "Примеры здесь",
+        buttonLink:
+          "https://react.dev/reference/react/useMemo#examples-recalculation",
+      },
+      {
+        type: "content",
+        img: useMemoImage.reRenderUseMemo,
+        title: "Ре-рендер дочернего компонента",
+        secondary:
+          "При каждом рендере будет выполняться функция filterTodos() и возвращать нам новую ссылку на массив, этот массив мы передаем в дочерний компонент List через props и т.к. массив каждый раз новый не смотря на то, что содержание не меняется,  приведет в тому что List также будет перерендериваться",
+      },
+      {
+        type: "content",
+        img: useMemoImage.reRenderUseMemo2,
+        title: "Пропуск ре-рендера",
+        secondary:
+          "Оборачиваем функцию filterTodos() в useMemo и теперь получаем одну и ту же ссылку на массив, props не меняется и List повторно не рендерится",
+      },
     ],
   },
   useCallback: {
@@ -209,23 +258,166 @@ export const configPages = {
     content: [
       {
         type: "title",
-        icon: "",
-        title: "",
-        secondary: "",
+        icon: <GiBugleCall />,
+        title: "useCallback hook",
+        secondary:
+          "Позволяет кэшировать определение функции между повторными рендерами.",
         buttonName: "Документация",
-        buttonLink: "https://react.dev/reference/react/useRef",
+        buttonLink: "https://react.dev/reference/react/useCallback",
       },
-
       {
         type: "describe",
-        title: "",
-        secondary: "",
+        title: "Похож на хук useMemo",
+        secondary:
+          "Как можно догодаться из названия хука, что он позволяет кэшировать функцию. В принципе кэшировать функцию можно с помощью хука useMemo, но хук useCallback это делает проще.",
       },
       {
         type: "content",
-        img: "",
-        title: "",
-        secondary: "",
+        img: useCallbackImage.initialUseCallback,
+        title: "Вызываем хук useCallback...",
+        secondary:
+          "Вызываем хук useCallback на верхнем уровне компонента.\n" +
+          "Первым параметром передаем колбэк функцию результат которой необходимо кешировать.\n" +
+          "Вторым параметром передаем массив зависимостей при изменении, которой будет произведен повторный вызов переданной функции.",
+      },
+      {
+        type: "title",
+        secondary:
+          "Принцип работы очень схож с useMemo, поэтому лучше просто посмотреть на него в деле",
+        buttonName: "Здесь",
+        buttonLink:
+          "https://react.dev/reference/react/useCallback#examples-rerendering",
+      },
+    ],
+  },
+  memo: {
+    title: "React.memo",
+    linkPage: "memo",
+    content: [
+      {
+        type: "title",
+        icon: <MdUpdate />,
+        title: "React.memo",
+        secondary:
+          "позволяет пропустить повторный рендеринг компонента, если его props не изменились.",
+        buttonName: "Документация",
+        buttonLink: "https://react.dev/reference/react/memo",
+      },
+      {
+        type: "describe",
+        title: "memo - это не хук, а HOC ...",
+        secondary:
+          "React обычно повторно визуализирует компонент всякий раз, когда его родительский компонент повторно рендерится. С помощью memo вы можете создать компонент, который React не будет повторно рендерить при повторном рендеринге его родителя, если его новые props совпадают со старыми. Говорят, что такой компонент мемоизирован .",
+      },
+      {
+        type: "content",
+        img: memoImage.initialMemo,
+        title: "Оборачиваем компонент в memo",
+        secondary:
+          "Эта мемоизированная версия компонента, как правило, не будет повторно рендериться при повторном рендере его родительского компонента, если его props не изменились. Но React все еще может перерисовать его: мемоизация — это оптимизация производительности, а не гарантия.",
+      },
+      {
+        type: "content",
+        title: "Пример без memo",
+        secondary:
+          "В примере ниже компонент Greeting повторно визуализируется при изменении name (так как это один из его props), но не при изменении address (так как он не передается в Greeting в качестве props)",
+      },
+      {
+        type: "content",
+        img: memoImage.use1,
+      },
+      {
+        type: "title",
+        buttonName: "Код здесь",
+        buttonLink: "https://react.dev/reference/react/memo#usage",
+      },
+      {
+        type: "content",
+        title: "Пример c memo",
+        secondary:
+          "Но стоит обернуть компонент Greeting в memo, то при изменении address ре-рендер компонента прекращается",
+      },
+      {
+        type: "content",
+        img: memoImage.use2,
+      },
+      {
+        type: "describe",
+        title:
+          "И наконец... \nТеперь мы можем собрать все воедино. Для этого нам нужны useMemo и useCallback ",
+        secondary:
+          "Как вы занете объект, массив и функция - ссылочные типы данных. И если мы их передаем в props и между рендерами родителя данные в объекте не менялись, но ссылка на объект будет создана новой, а значит, что при поверхностном сравнении в memo решит, что props поменялся и нужен рендер.\n" +
+          "И как раз в этот момент нам пригодятся useMemo и useCallback, для того чтобы закэшировать объект(массив или функцию)",
+      },
+      {
+        type: "content",
+        title: "Кэширование props с помощью useMemo",
+        secondary:
+          "Когда вы используете memo, ваш компонент повторно визуализирует всякий раз, когда какой-либо props не совсем равен тому, что было раньше. Это означает, что React сравнивает каждое свойство в вашем компоненте с его предыдущим значением, используя Object.is.\n" +
+          " Обратите внимание, что \n Object.is(3, 3) true \n Object.is({}, {}) false.\n" +
+          "\n" +
+          "Чтобы получить максимальную отдачу от memo, минимизируйте количество изменени props. Например, если props является объектом, не позволяйте родительскому компоненту каждый раз заново создавать этот объект с помощью useMemo:",
+      },
+      {
+        type: "content",
+        img: memoImage.use3,
+      },
+      {
+        type: "content",
+        title: "Использование функции сравнения",
+        secondary:
+          "В случае когда невозможно свести к минимуму изменения props. Вы можете использовать свою функцию сравнения, которую React будет использовать для сравнения старых и новых props вместо того, чтобы использовать поверхностное равенство. Эта функция передается в качестве второго аргумента memo. Он должен возвращать true только в том случае, если новые props не требуют рендера, в противном случае он должен возвращать false для ре-рендера компонента",
+      },
+      {
+        type: "content",
+        img: memoImage.use4,
+      },
+    ],
+  },
+  hoc: {
+    title: "HOC",
+    linkPage: "hoc",
+    content: [
+      {
+        type: "title",
+        icon: <GiStrongMan />,
+        title: "HOC",
+        secondary: "Компонент высшего порядка(Higher-Order Components)",
+        buttonName: "Документация",
+        buttonLink:
+          "https://ru.legacy.reactjs.org/docs/higher-order-components.html",
+      },
+      {
+        type: "describe",
+        title:
+          "HOC - это функция, которая принимает компонент и возвращает новый компонент",
+        secondary:
+          "Один из продвинутых способов для повторного использования логики. HOC не являются частью API React, но часто применяются из-за композиционной природы компонентов.",
+      },
+      {
+        type: "title",
+        icon: <AiOutlineLike />,
+        secondary: "Накидал немного интересных примеров",
+        buttonName: "Здесь",
+        buttonLink:
+          "https://codesandbox.io/s/react-optimization-px9npn?file=/src/router/index.js",
+      },
+    ],
+  },
+  about: {
+    title: "О сайте",
+    linkPage: "about",
+    content: [
+      {
+        type: "title",
+        icon: <TbMessageCircleQuestion />,
+        secondary: "Надеюсь все было понятно... ;)",
+        buttonName: "Github",
+        buttonLink: "https://github.com/maksipin/react-hooks-optimization",
+      },
+      {
+        type: "content",
+        img: aboutImage.mainAbout,
       },
     ],
   },
