@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-hooks-optimization/static/css/main.ef77c487.css",
-    "main.js": "/react-hooks-optimization/static/js/main.a7fad9d8.js",
+    "main.css": "/react-hooks-optimization/static/css/main.daf6df56.css",
+    "main.js": "/react-hooks-optimization/static/js/main.0cde2ff5.js",
     "static/media/render.png": "/react-hooks-optimization/static/media/render.9e8d3436d56501efe0d2.png",
     "static/media/update_render.png": "/react-hooks-optimization/static/media/update_render.bea4972db30e527879a1.png",
     "static/media/render2.png": "/react-hooks-optimization/static/media/render2.5fa21186c28d4d96d840.png",
@@ -22,11 +22,11 @@
     "static/media/interval1.png": "/react-hooks-optimization/static/media/interval1.3570d991f8e2464770ac.png",
     "static/media/475.png": "/react-hooks-optimization/static/media/475.49f5f201efb2e7c62c38.png",
     "index.html": "/react-hooks-optimization/index.html",
-    "main.ef77c487.css.map": "/react-hooks-optimization/static/css/main.ef77c487.css.map",
-    "main.a7fad9d8.js.map": "/react-hooks-optimization/static/js/main.a7fad9d8.js.map"
+    "main.daf6df56.css.map": "/react-hooks-optimization/static/css/main.daf6df56.css.map",
+    "main.0cde2ff5.js.map": "/react-hooks-optimization/static/js/main.0cde2ff5.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef77c487.css",
-    "static/js/main.a7fad9d8.js"
+    "static/css/main.daf6df56.css",
+    "static/js/main.0cde2ff5.js"
   ]
 }
