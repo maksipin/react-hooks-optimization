@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className={classes.container}>
         <div className={classes.wrapper}>
           <div className={classes.logoTitle}>
-            <div className={classes.primary}>АЛГОНТ</div>
+            <div className={classes.primary}>Гильдия</div>
             <div className={classes.secondary}>Frontend TEAM</div>
           </div>
           <div className={classes.link}>
